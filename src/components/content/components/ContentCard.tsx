@@ -1,7 +1,8 @@
-import { Card, CardBody, CardFooter, ButtonGroup, Button, Divider, Heading, Stack, Image, Text } from '@chakra-ui/react'
+import { Card, CardFooter, ButtonGroup, Button, Divider, Heading, Stack, Image, Text, Box } from '@chakra-ui/react'
 import React from 'react'
 import { Edge } from '../../types/Types'
 import { ContentBody } from './ContentBody'
+import { DownloadIcon, LinkIcon } from '@chakra-ui/icons'
 
 type IContentCardProps = {
     data: Edge
@@ -14,14 +15,12 @@ export const ContentCard = (props: IContentCardProps) => {
         <ContentBody type={type} data={data} />    
         <Divider />
         <CardFooter>
-            <ButtonGroup spacing='2'>
-            <Button variant='solid' colorScheme='blue'>
-                Buy now
-            </Button>
-            <Button variant='ghost' colorScheme='blue'>
-                Add to cart
-            </Button>
-            </ButtonGroup>
+            <Box p='2'>
+                <ButtonGroup spacing='2'>
+                    <Button title='Share'><LinkIcon /></Button>
+                    <Button title='Download'><DownloadIcon /></Button>
+                </ButtonGroup>
+            </Box>
         </CardFooter>
     </Card>
     )

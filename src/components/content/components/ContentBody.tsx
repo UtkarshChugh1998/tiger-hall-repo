@@ -10,8 +10,10 @@ const EbookComponent = (props: any) => {
 
         <CardBody>
             <Image
+            width='375px'
+            height='200px'
             src={data.image.uri}
-            alt='Green double couch with wooden legs'
+            alt={data.image.alt}
                 borderRadius='lg'
             />
             <Stack mt='6' spacing='3'>
@@ -40,8 +42,11 @@ const PodcastComponent = (props: any) => {
         <div>
         <CardBody>
             <Image
+            width='375px'
+            height='200px'
+            objectFit='cover'
             src={data.image.uri}
-            alt='Green double couch with wooden legs'
+            alt={data.image.alt}
                 borderRadius='lg'
             />
             <Stack mt='6' spacing='3'>
@@ -70,8 +75,11 @@ const EventComponent = (props: any) => {
 
         <CardBody>
             <Image
+            width='375px'
+            height='200px'
+            objectFit='cover'
             src={data.image.uri}
-            alt='Green double couch with wooden legs'
+            alt={data.image.alt}
                 borderRadius='lg'
             />
             <Stack mt='6' spacing='3'>
@@ -93,8 +101,11 @@ const ExpertComponent = (props: any) => {
     return (
         <CardBody>
             <Image
+            width='375px'
+            height='200px'
+            objectFit='cover'
             src={data.image.uri}
-            alt='Green double couch with wooden legs'
+            alt={data.image.alt}
                 borderRadius='lg'
             />
             <Stack mt='6' spacing='3'>
@@ -138,6 +149,10 @@ const StreamComponent = (props: any) => {
 }
 export const ContentBody = (props: any) => {
     const { data, type } = props
+    const imageUri: string = data?.image?.uri
+    // const idx = imageUri.indexOf('.io') + 3
+    // const effectiveUri = imageUri.substring(0, idx) + '/resize/400x' + imageUri.substring(idx)
+    // const effectiveData = {...data, image: {...data.image, uri: effectiveUri}}
     return (
         <div>
             {type === ContentType.EBOOK ? (

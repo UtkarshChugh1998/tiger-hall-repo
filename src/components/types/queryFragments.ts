@@ -40,6 +40,7 @@ export const ebookFragment = () => {
 }
 export const fragmentDef = `
     fragment Image on Image{
+        alt
         uri
     }
     fragment Category on Category {
@@ -88,6 +89,7 @@ export const eventFragment = () => {
 }
 export const fragmentDef1 = `
     fragment Image on Image{
+        alt
         uri
     }`
 
@@ -126,6 +128,7 @@ export const streamFragment = () => {
 
 export const fragmentDef2 = `
     fragment Image on Image{
+        alt
         uri
     }
     fragment Video on StreamMedia{
