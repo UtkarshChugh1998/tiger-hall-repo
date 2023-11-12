@@ -72,7 +72,6 @@ const PodcastComponent = (props: any) => {
 const EventComponent = (props: any) => {
     const data = props.data
     return (
-
         <CardBody>
             <Image
             width='375px'
