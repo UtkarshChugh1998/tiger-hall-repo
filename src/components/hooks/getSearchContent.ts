@@ -1,4 +1,4 @@
-import { ContentType, FilterContentType, categoryFragment, ebookFragment, eventFragment, expertFragment, fragementDef1, fragmentDef, learningPathFragment, lifeGoalFragment, podcastFragment, streamFragment } from "../types/queryFragments"
+import { ContentType, FilterContentType, categoryFragment, ebookFragment, eventFragment, expertFragment, fragmentDef1, fragmentDef, fragmentDef2, learningPathFragment, lifeGoalFragment, podcastFragment, streamFragment } from "../types/queryFragments"
 
 export const getSearchContent = (searchVal: string, tabVal: string, setData: Function, setLoading: Function, setError: Function) => {
     setLoading(true)
@@ -20,18 +20,19 @@ export const getSearchContent = (searchVal: string, tabVal: string, setData: Fun
         }
         case ContentType.EVENT: {
             subQuery = eventFragment()
-            fragmentDefinition = fragementDef1
+            fragmentDefinition = fragmentDef1
             filterContentType = FilterContentType.EVENT
             break;
         }
         case ContentType.EXPERT: {
             subQuery = expertFragment()
-            fragmentDefinition = fragementDef1
+            fragmentDefinition = fragmentDef1
             filterContentType = FilterContentType.EXPERT
             break;
         }
         case ContentType.STREAM: {
             subQuery = streamFragment()
+            fragmentDefinition = fragmentDef2
             filterContentType = FilterContentType.STREAM
             break
         }

@@ -86,7 +86,7 @@ export const eventFragment = () => {
         }
     }`
 }
-export const fragementDef1 = `
+export const fragmentDef1 = `
     fragment Image on Image{
         uri
     }`
@@ -113,16 +113,28 @@ export const streamFragment = () => {
             image {
                 ...Image
             }
-            isOnline
-            location {
-                city
-            }
+            channel
             organisation {
-                name
+              name
+            }
+            video {
+                ...Video
             }
         }
     }`
 }
+
+export const fragmentDef2 = `
+    fragment Image on Image{
+        uri
+    }
+    fragment Video on StreamMedia{
+        language
+        url
+        length
+        publishedAt
+    }
+`
 
 export const learningPathFragment = () => {
     return `

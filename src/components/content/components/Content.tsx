@@ -9,15 +9,15 @@ type IContentProps = {
     error: Error[]
 }
 export const Content = (props: IContentProps) => {
-    const {data, error} = props
+    const {data, type, error} = props
     return (
         <div className='contentContainer'>
 
-            {error?.map((err) => (
-                <ErrorMessage error={err.message} />
-            ))}
+            {error && error.length > 0 && ( 
+                <ErrorMessage error={error[0].message} />
+            )}
             {data?.edges?.map((edge) => {
-                return (<ContentCard data={edge} />)
+                return (<ContentCard data={edge} type={type} />)
             })}
         </div>
     )
