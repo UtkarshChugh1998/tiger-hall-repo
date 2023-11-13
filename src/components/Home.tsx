@@ -38,6 +38,7 @@ export const Home = () => {
             <SearchIcon color="gray.300" />
           </InputLeftElement>
           <Input
+            role="input"
             placeholder="Search Content"
             w="400px"
             color="white"

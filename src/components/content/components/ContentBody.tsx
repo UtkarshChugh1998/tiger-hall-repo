@@ -13,7 +13,7 @@ const EbookComponent = (props: any) => {
   const data = props.data
   return (
     <div>
-      <CardBody>
+      <CardBody role="card">
         <Image
           width="375px"
           height="200px"
@@ -44,7 +44,7 @@ const PodcastComponent = (props: any) => {
   const data = props.data
   return (
     <div>
-      <CardBody>
+      <CardBody role="card">
         <Image
           width="375px"
           height="200px"
@@ -75,7 +75,7 @@ const PodcastComponent = (props: any) => {
 const EventComponent = (props: any) => {
   const data = props.data
   return (
-    <CardBody>
+    <CardBody role="card">
       <Image
         width="375px"
         height="200px"
@@ -99,7 +99,7 @@ const EventComponent = (props: any) => {
 const ExpertComponent = (props: any) => {
   const data = props.data
   return (
-    <CardBody>
+    <CardBody role="card">
       <Image
         width="375px"
         height="200px"
@@ -124,7 +124,7 @@ const ExpertComponent = (props: any) => {
 const StreamComponent = (props: any) => {
   const data = props.data
   return (
-    <CardBody>
+    <CardBody role="card">
       <AspectRatio maxW="560px" ratio={1}>
         <iframe title="naruto" src={data?.video?.url} allowFullScreen />
       </AspectRatio>
@@ -143,7 +143,7 @@ const StreamComponent = (props: any) => {
 const LearningPathComponent = (props: any) => {
   const data = props.data
   return (
-    <CardBody>
+    <CardBody role="card">
       <Image
         width="375px"
         height="200px"
