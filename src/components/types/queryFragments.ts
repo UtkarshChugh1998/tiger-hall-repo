@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export enum ContentType {
   EBOOK = 'Ebook',
   PODCAST = 'Podcast',
@@ -5,8 +6,6 @@ export enum ContentType {
   EXPERT = 'Expert',
   STREAM = 'Stream',
   LEARNING_PATH = 'LearningPath',
-  CATEGORY = 'Category',
-  LIFE_GOAL = 'LifeGoal',
 }
 export enum FilterContentType {
   EBOOK = 'EBOOK',
@@ -15,8 +14,6 @@ export enum FilterContentType {
   EXPERT = 'EXPERT',
   STREAM = 'STREAM',
   LEARNING_PATH = 'LEARNING_PATH',
-  CATEGORY = 'CATEGORY',
-  LIFE_GOAL = 'LIFE_GOAL',
 }
 export const ebookFragment = () => {
   return `
@@ -142,52 +139,11 @@ export const learningPathFragment = () => {
         ... on LearningPath {
             name
             image {
-                ...Image
+                alt
+                uri
             }
-            isOnline
-            location {
-                city
-            }
-            organisation {
-                name
-            }
-        }
-    }`
-}
-
-export const categoryFragment = () => {
-  return `
-    edges {
-        ... on Category {
-            name
-            image {
-                ...Image
-            }
-            isOnline
-            location {
-                city
-            }
-            organisation {
-                name
-            }
-        }
-    }`
-}
-
-export const lifeGoalFragment = () => {
-  return `
-    edges {
-        ... on LifeGoal {
-            name
-            image {
-                ...Image
-            }
-            isOnline
-            location {
-                city
-            }
-            organisation {
-                name
+            featuredLifegoal {
+              name
             }
         }
     }`

@@ -14,7 +14,7 @@ export const Content = (props: IContentProps) => {
     <div className="contentContainer">
       {error && error.length > 0 && <ErrorMessage error={error[0].message} />}
       {data?.edges?.map((edge, index) => {
-          return <ContentCard key={index} data={edge} type={type} />
+        return <ContentCard key={index} data={edge} type={type} />
       })}
     </div>
   )

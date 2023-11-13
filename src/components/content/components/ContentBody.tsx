@@ -25,6 +25,8 @@ const EbookComponent = (props: any) => {
           <Heading size="md">{data.name}</Heading>
           <Text>{data.name}</Text>
           <div>
+            {' '}
+            By:
             {data?.experts?.map((expert: any, index: number) => {
               return (
                 <Text key={index}>
@@ -55,6 +57,8 @@ const PodcastComponent = (props: any) => {
           <Heading size="md">{data.name}</Heading>
           <Text>{data.name}</Text>
           <div>
+            {' '}
+            By:
             {data?.experts?.map((expert: any, index: number) => {
               return (
                 <Text key={index}>
@@ -85,8 +89,8 @@ const EventComponent = (props: any) => {
         <Text>{data.name}</Text>
         <div>
           <Text>isOnline: {data.isOnline ? 'Yes' : 'No'}</Text>
-          <Text>Location: {data.location}</Text>
-          <Text>Organisation: {data.organisation}</Text>
+          <Text>Location: {data.location || 'N/A'}</Text>
+          <Text>Organisation: {data.organisation || 'N/A'}</Text>
         </div>
       </Stack>
     </CardBody>
@@ -135,9 +139,34 @@ const StreamComponent = (props: any) => {
     </CardBody>
   )
 }
+
+const LearningPathComponent = (props: any) => {
+  const data = props.data
+  return (
+    <CardBody>
+      <Image
+        width="375px"
+        height="200px"
+        objectFit="cover"
+        src={data.image.uri}
+        alt={data.image.alt}
+        borderRadius="lg"
+      />
+      <Stack mt="6" spacing="3">
+        <Heading size="md">{data.name}</Heading>
+        <Text>{data.name}</Text>
+        <div>
+          <Text>
+            Featured Life Goal: {data?.featuredLifegoal?.name || 'N/A'}
+          </Text>
+        </div>
+      </Stack>
+    </CardBody>
+  )
+}
 export const ContentBody = (props: any) => {
   const { data, type } = props
-//   const imageUri: string = data?.image?.uri
+  //   const imageUri: string = data?.image?.uri
   // const idx = imageUri.indexOf('.io') + 3
   // const effectiveUri = imageUri.substring(0, idx) + '/resize/400x' + imageUri.substring(idx)
   // const effectiveData = {...data, image: {...data.image, uri: effectiveUri}}
@@ -153,6 +182,8 @@ export const ContentBody = (props: any) => {
         <ExpertComponent data={data} />
       ) : type === ContentType.STREAM ? (
         <StreamComponent data={data} />
+      ) : type === ContentType.LEARNING_PATH ? (
+        <LearningPathComponent data={data} />
       ) : null}
     </div>
   )

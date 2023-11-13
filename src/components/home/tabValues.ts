@@ -5,6 +5,4 @@ export const tabValues = [
   'Expert',
   'Stream',
   'LearningPath',
-  'Category',
-  'LifeGoal',
 ]
