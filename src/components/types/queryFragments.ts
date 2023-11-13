@@ -1,28 +1,25 @@
 export enum ContentType {
-    EBOOK = 'Ebook',
-    PODCAST = 'Podcast',
-    EVENT = 'Event',
-    EXPERT = 'Expert',
-    STREAM = 'Stream',
-    LEARNING_PATH = 'LearningPath',
-    CATEGORY = 'Category',
-    LIFE_GOAL = 'LifeGoal'
-
-
+  EBOOK = 'Ebook',
+  PODCAST = 'Podcast',
+  EVENT = 'Event',
+  EXPERT = 'Expert',
+  STREAM = 'Stream',
+  LEARNING_PATH = 'LearningPath',
+  CATEGORY = 'Category',
+  LIFE_GOAL = 'LifeGoal',
 }
 export enum FilterContentType {
-    EBOOK = 'EBOOK',
-    PODCAST = 'PODCAST',
-    EVENT = 'EVENT',
-    EXPERT = 'EXPERT',
-    STREAM = 'STREAM',
-    LEARNING_PATH = 'LEARNING_PATH',
-    CATEGORY = 'CATEGORY',
-    LIFE_GOAL = 'LIFE_GOAL'
-
+  EBOOK = 'EBOOK',
+  PODCAST = 'PODCAST',
+  EVENT = 'EVENT',
+  EXPERT = 'EXPERT',
+  STREAM = 'STREAM',
+  LEARNING_PATH = 'LEARNING_PATH',
+  CATEGORY = 'CATEGORY',
+  LIFE_GOAL = 'LIFE_GOAL',
 }
 export const ebookFragment = () => {
-    return `
+  return `
     edges {
         ... on Ebook {
             name
@@ -53,7 +50,7 @@ export const fragmentDef = `
         company
 }`
 export const podcastFragment = () => {
-    return `
+  return `
     edges {
         ... on Podcast {
             name
@@ -70,7 +67,7 @@ export const podcastFragment = () => {
     }`
 }
 export const eventFragment = () => {
-    return `
+  return `
     edges {
         ... on Event {
             name
@@ -94,7 +91,7 @@ export const fragmentDef1 = `
     }`
 
 export const expertFragment = () => {
-    return `
+  return `
     edges {
         ... on Expert {
             firstName
@@ -108,7 +105,7 @@ export const expertFragment = () => {
 }
 
 export const streamFragment = () => {
-    return `
+  return `
     edges {
         ... on Stream {
             name
@@ -140,7 +137,7 @@ export const fragmentDef2 = `
 `
 
 export const learningPathFragment = () => {
-    return `
+  return `
     edges {
         ... on LearningPath {
             name
@@ -159,7 +156,7 @@ export const learningPathFragment = () => {
 }
 
 export const categoryFragment = () => {
-    return `
+  return `
     edges {
         ... on Category {
             name
@@ -178,7 +175,7 @@ export const categoryFragment = () => {
 }
 
 export const lifeGoalFragment = () => {
-    return `
+  return `
     edges {
         ... on LifeGoal {
             name
@@ -195,4 +192,3 @@ export const lifeGoalFragment = () => {
         }
     }`
 }
-
